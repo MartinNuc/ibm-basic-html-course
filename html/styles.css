@@ -1,0 +1,26 @@
+p:hover em {
+  color: red;
+}
+
+#main-header {
+  color: blue;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr {
+  border-bottom: 1px solid gray;
+}
+
+tr:nth-child(odd) {
+  background-color: gray;
+}
+
+td {
+  padding: 10px;
+}
+th {
+  padding: 10px;
+}
