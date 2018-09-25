@@ -1,26 +1,78 @@
-p:hover em {
-  color: red;
+/* p:hover > em {
+  color: pink;
 }
 
-#main-header {
-  color: blue;
+p:hover > em > em {
+  color: green;
+  background-color: gray; 
+} */
+
+p:hover + p:nth-child(2) {
+  color: green;
 }
 
-table {
-  border-collapse: collapse;
+.menu {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  top: 0;
+  height: 50px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
-tr {
-  border-bottom: 1px solid gray;
+.content {
+  position: relative;
+  top: 60px;
+  z-index: -1;
 }
 
-tr:nth-child(odd) {
-  background-color: gray;
+.small {
+  position: relative;
+  top: 50px;
+  left: -50px;
 }
 
-td {
-  padding: 10px;
+.pulled-down {
+  margin-top: 50px;
 }
-th {
-  padding: 10px;
+
+body {
+  background-color: yellow;
+}
+@media screen and (max-width: 500px) {
+  body {
+    /* background-color: red; */
+  }
+}
+
+
+.container {
+  background-color: yellow;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  background-color: blue;
+  min-height: 20px;
+  margin: 10px;
+}
+.item:nth-child(1) {
+  flex-basis: 100%;
+}
+.item:nth-child(2) {
+  flex-grow: 1;
+}
+.item:nth-child(3) {
+  flex-grow: 30;
+}
+.item:nth-child(4) {
+  flex-basis: 100%;
+}
+
+input:invalid {
+  border: 1px solid red;
 }
