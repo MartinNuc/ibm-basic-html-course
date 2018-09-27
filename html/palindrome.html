@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+    <button type="button" onclick="activatePalindrome()">Click me</button>
+    <div class="result-div" style="background-color: gray; width: 200px; height: 200px;"></div>
+
+    <script>
+      function activatePalindrome() {
+        let string = prompt('In what you are interested?');
+        let result = isPalindrome(string);
+        if (result === true) {
+          let element = document.querySelector('.result-div');
+          element.style.backgroundColor = 'green';
+        } else {
+          let element = document.querySelector('.result-div');
+          element.style.backgroundColor = 'red';
+        }
+      }
+      function isPalindrome(input) {
+        const reversed = input.split('').reverse().join('');
+        return input === reversed;
+      }
+    </script>
+  
+  </body>
+</html>
