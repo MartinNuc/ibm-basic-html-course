@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="result"></div>
+  <button onclick="download()">download</button>
+  <script>
+fetch('http://stapi.co/api/v1/rest/season/search?pretty')
+.then(response => response.json())
+.then(data => console.log(data));
+
+
+    let payload = new URLSearchParams();
+    payload.set('name', 'Picard');
+    var result = document.querySelector('.result');
+    download();
+
+    function download() {
+      result.innerHTML = '';
+      fetch('http://stapi.co/api/v1/rest/character/search', {
+        method: 'POST',
+        body: payload
+      })
+        .then(response => response.json())
+        .then(data => {
+          data.characters.forEach(character => {
+            var el = document.createElement('div');
+            el.innerHTML = character.name;
+            result.append(el);
+        })
+      })
+    }
+  </script>
+</body>
+
+</html>

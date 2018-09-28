@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <script>
+
+    let satisfactionTime = 32000;
+    ask();
+
+    function ask() {
+      let typed = prompt('Give me a cookie!');
+      if (typed === 'cookie') {
+        satisfactionTime = satisfactionTime / 2;
+        setTimeout(() => ask(), satisfactionTime);
+      } else {
+        ask();
+      }
+    }
+
+  </script>
+</body>
+
+</html>

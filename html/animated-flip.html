@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .tails, .heads {
+      width: 300px;
+      position: absolute
+    }
+    .showing {
+      transition: transform 0.5s 0.5s ease-out;
+    }
+    .hiding {
+      transition: transform 0.5s ease-in;
+    }
+  </style>
+</head>
+<body>
+
+  <img class="tails" src="heads.jpeg">
+  <img class="heads" src="tails.jpeg">
+  <button style="position: relative; top: 340px" onclick="start()">flip</button>
+  <script>
+    window.addEventListener('load', () => {
+    });
+
+    function start() {
+      let n = Math.round(Math.random() * 6 + 4);
+      console.log(`I will flip ${n} times.`);
+      scheduleFlip();
+      function scheduleFlip() {
+        let shouldIFlipAgain = n > 0;
+        if (shouldIFlipAgain) {
+          setTimeout(() => {
+            flip();
+            n--;
+            scheduleFlip();
+          }, 1000);
+        }
+      }
+    }
+
+    const heads = document.querySelector('.heads')
+    const tails = document.querySelector('.tails')
+    let current = 'heads';
+
+    function flip() {
+      current = current === 'heads' ? 'tails' : 'heads';
+      updateView();
+    }
+    function updateView() {
+      if (current === 'tails') {
+        show(heads);
+        hide(tails);
+      } else {
+        hide(heads);
+        show(tails);
+      }
+    }
+
+    function hide(element) {
+      element.classList.add('hiding');
+      element.classList.remove('showing');
+      element.style.transform = `rotateY(90deg)`;
+    }
+
+    function show(element) {
+      element.classList.add('showing');
+      element.classList.remove('hiding');
+      element.style.transform = `rotateY(0deg)`;
+    }
+    
+  </script>
+</body>
+</html>
