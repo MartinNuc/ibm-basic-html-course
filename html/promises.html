@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <script>
+
+/*
+    ... 1s delay
+    console.log('after 1s')
+    ... 2s delay
+    console.log('after 2s')
+    console.log('done')
+*/
+
+    function wait(time) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(), time);
+      });
+    }
+
+    let promise = wait(1000);
+    promise
+      .then(() => console.log('after 1s'))
+      .then(() => wait(2000))
+      .then(() => console.log('after 2s'))
+    
+
+    
+  </script>
+</body>
+</html>
