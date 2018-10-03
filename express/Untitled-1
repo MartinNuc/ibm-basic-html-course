@@ -1,0 +1,59 @@
+
+1. new directory
+2. npm init
+3. tsc --init
+4. index.ts
+5. npm start script
+"start": "tsc && node index.js"
+
+6. npm install express
+7. npm install @types/express
+
+8. change "target" to "es6" in tsconfig.json
+
+9. npm start
+9. npm run start
+
+10. open in browser: http://localhost:3000
+
+
+
+
+http://localhost:3000/user/12/cars/8?key1=value1&key2=value2
+<proto>://<hostname>:<port>/<path>?<query-params>#<anchor>
+
+app.get('/user/:userId/cars/8', (req, res) =>{
+  req.params.userId = 12
+  req.query.key1 = 'value1'
+  res.send('hi')
+  res.send('hi')
+})
+
+localhost -> 127.0.0.1
+
+
+
+https://www.ibm.com/partnerworld/public/resell-products-and-services
+https://www.ibm.com/partnerworld/public/reselling-with-ibm-overview
+
+app.get('partnerworld/public/:page', (req, res) => {
+  if (req.page === 'resell-products-and-services') {
+    loadPageFromHardDrive('resell.html');
+  }
+})
+
+
+
+https://www.google.com/search/weather-in-groningen?q=weather&token=43242423
+https://www.google.com/search/weather-in-prague
+https://www.google.com/search/weather-in-prague/10
+
+app.get('/search/:searchQuery/:maxResult', (req, res) => {
+  console.log(req.params.searchQuery);
+  console.log(req.params.maxResult);
+  console.log(req.query.q);
+  console.log(req.query.token);
+
+})
+
+app.get('/users', () =>)
