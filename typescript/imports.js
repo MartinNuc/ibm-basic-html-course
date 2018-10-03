@@ -7,8 +7,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const calculations_1 = require("./calculations");
-const pi_1 = __importStar(require("./pi"));
+var calculations_1 = require("./calculations");
+var pi_1 = __importStar(require("./pi"));
 console.log(pi_1.default);
 calculations_1.add(5, 9);
 calculations_1.sumOfArray([1, 2, 3, 4]);

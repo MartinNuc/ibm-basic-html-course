@@ -5,6 +5,6 @@ function add(a, b) {
 }
 exports.add = add;
 function sumOfArray(arr) {
-    return arr.reduce((a, b) => add(a, b), 0);
+    return arr.reduce(function (a, b) { return add(a, b); }, 0);
 }
 exports.sumOfArray = sumOfArray;

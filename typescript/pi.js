@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const pi = 3.14;
+var pi = 3.14;
 exports.default = pi;
 function area(r) {
     return pi * Math.pow(r, 2);

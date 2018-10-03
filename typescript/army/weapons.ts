@@ -1,25 +1,24 @@
-export abstract class Weapon {
-  abstract power: number;
-  abstract defense: number;
-  abstract range: number;
-  abstract twoHanded: boolean;
+export interface Weapon {
+  power: number;
+  defense: number;
+  range: number;
+  twoHanded: boolean;
 }
-
-export class Sword extends Weapon {
+export class Sword implements Weapon {
   power = 10;
   defense = 0;
   range = 1;
   twoHanded = false;
 }
 
-export class Bow extends Weapon {
+export class Bow implements Weapon {
   power = 4;
   defense = 0;
   range = 5;
   twoHanded = true;
 }
 
-export class Shield extends Weapon {
+export class Shield implements Weapon {
   power = 0;
   defense = 3;
   range = 0;
