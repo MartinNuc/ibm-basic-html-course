@@ -1,0 +1,28 @@
+
+{{ counter }}
+
+<button (click)="increment()">CLICK ME</button>
+
+<app-timestamp-list [array]="clickTimestamps"></app-timestamp-list>
+
+<app-hello-world></app-hello-world>
+
+
+
+
+
+
+
+
+<div class="container">
+  <button class="button" (click)="toggleDropdown()">show / hide</button>
+  <div class="menu" *ngIf="isOpened">
+    <a href="https://google.com">google</a><br>
+    <a href="https://ibm.com">ibm</a><br>
+    <a href="https://apple.com">apple</a>
+  </div>
+</div>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ab voluptatem accusantium quibusdam recusandae deleniti veniam animi sit fugit possimus voluptate, dolores fugiat cumque odit minus sed accusamus? Doloremque, facere.</p>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloremque explicabo recusandae, eaque dolorem sed nulla suscipit deserunt? Asperiores laborum minus numquam debitis, quae enim corrupti impedit quisquam voluptatum alias!</p>
