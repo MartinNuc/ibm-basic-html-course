@@ -3,6 +3,8 @@
     <th>Time</th>
   </tr>
   <tr *ngFor="let date of array">
-    <td>{{date}}</td>
+    <td>{{date | date: 'HH:mm:ss'}}</td>
   </tr>
 </table>
+
+{{array | json}}

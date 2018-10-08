@@ -38,4 +38,29 @@ app.get('/users/:userId/cars/:carId', (req, res) => {
     color = ${req.query.color}`);
 });
 
+
+app.get('/', (req, res) => {
+  res.render('index');
+})
+
+app.get('/contact', (req, res) => {
+  res.render('contact', {
+    title: 'fsjheflis'
+  });
+})
+
+app.get('/investments/list', (req, res) => {
+  res.render('list', {
+    title: 'htlwehtlh'
+  });
+})
+
+
+
+
+
+
+
+
+
 app.listen(3000, '0.0.0.0', () => console.log('ready'));

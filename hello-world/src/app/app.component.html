@@ -1,9 +1,15 @@
 
-{{ counter }}
 
+<button (click)="startObservable()">Start observable</button>
+{{dates$ | async}}
+<hr>
 <button (click)="increment()">CLICK ME</button>
 
-<app-timestamp-list [array]="clickTimestamps"></app-timestamp-list>
+<app-items-count></app-items-count>
+
+<app-timestamp-list [array]="timestampService.clickTimestamps"></app-timestamp-list>
+
+<app-remember-button (remember)="increment()"></app-remember-button>
 
 <app-hello-world></app-hello-world>
 
@@ -26,3 +32,16 @@
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ab voluptatem accusantium quibusdam recusandae deleniti veniam animi sit fugit possimus voluptate, dolores fugiat cumque odit minus sed accusamus? Doloremque, facere.</p>
 
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde doloremque explicabo recusandae, eaque dolorem sed nulla suscipit deserunt? Asperiores laborum minus numquam debitis, quae enim corrupti impedit quisquam voluptatum alias!</p>
+
+
+{{ counter }}
+
+<div class="space-around-please">
+  <div [ngClass]="obj">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore officiis sunt dignissimos labore quod voluptas, harum expedita architecto molestias aliquam quo dolor eveniet minima omnis reprehenderit doloribus laboriosam nulla ut!
+  </div>
+
+  <button (click)="switchColor()">Switch color</button>
+  <button (click)="switchSize()">Switch size</button>
+</div>
+

@@ -6,7 +6,6 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./timestamp-list.component.css']
 })
 export class TimestampListComponent implements OnInit {
-
   @Input()
   array: Date[];
 

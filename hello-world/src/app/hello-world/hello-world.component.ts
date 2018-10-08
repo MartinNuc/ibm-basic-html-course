@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelloWorldComponent implements OnInit {
 
+  secretVariable = 'hi';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  sayHello() {
+    console.log('hi');
   }
 
 }
