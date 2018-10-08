@@ -1,0 +1,18 @@
+<form #formReference="ngForm">
+  <div>
+    <label>email:</label>
+    <input [(ngModel)]="formData.email" type="email" name="email" required email>
+    <span *ngIf="formReference.form.controls['email']?.invalid">Enter valid email.</span>
+  </div>
+  <div>
+    <label>street:</label>
+    <input [(ngModel)]="formData.address.street" type="text" name="street">
+  </div>
+  <div>
+    <label>city:</label>
+    <input [(ngModel)]="formData.address.city" type="text" name="city">
+  </div>
+  <button [disabled]="formReference.invalid" type="submit" (click)="submit()">Submit form</button>
+</form>
+
+{{formData | json}}
